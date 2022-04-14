@@ -35,6 +35,12 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter</artifactId>
 		</dependency>
+		<!--  从 springcloud2020 版本开始 Bootstrap 被默认禁用，即默认 spring.cloud.bootstrap.enabled=false，
+			  这会导致配置文件中以占位符的方式引用另一个配置文件的配置解析失败 -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-bootstrap</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-sleuth</artifactId>
