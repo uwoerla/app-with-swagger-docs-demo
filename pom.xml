@@ -5,19 +5,21 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.5.12</version>
+		<version>2.6.6</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
 	<groupId>com.uwoerla</groupId>
 	<artifactId>app-with-swagger-docs-demo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>app-with-swagger-docs-demo</name>
 	<description>A Springboot App With Swagger Docs Demo</description>
 
 	<properties>
 		<java.version>11</java.version>
-		<spring-cloud.version>2020.0.5</spring-cloud.version>
+		<spring-cloud.version>2021.0.1</spring-cloud.version>
+		<springdoc.version>1.6.7</springdoc.version>
+		<springdoc-openapi-maven-plugin.version>1.4</springdoc-openapi-maven-plugin.version>
 	</properties>
 
 	<dependencies>
@@ -56,41 +58,14 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- springfox 已不在维护 这里使用 springdoc  -->
+		<!-- see https://springdoc.org/#migrating-from-springfox -->
 		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger2</artifactId>
-			<version>2.10.5</version>
-			<exclusions>
-				<exclusion>
-					<groupId>io.swagger</groupId>
-					<artifactId>swagger-annotations</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>io.swagger</groupId>
-					<artifactId>swagger-models</artifactId>
-				</exclusion>
-			</exclusions>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-spring-webmvc</artifactId>
-			<version>2.10.5</version>
-		</dependency>
-		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger-ui</artifactId>
-			<version>2.10.5</version>
-		</dependency>
-		<dependency>
-			<groupId>io.swagger</groupId>
-			<artifactId>swagger-annotations</artifactId>
-			<version>1.5.21</version>
-		</dependency>
-		<dependency>
-			<groupId>io.swagger</groupId>
-			<artifactId>swagger-models</artifactId>
-			<version>1.5.21</version>
-		</dependency>
+
+
 	</dependencies>
 
 	<dependencyManagement>
@@ -102,12 +77,20 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+			<!-- OpenAPI 3 -->
+			<dependency>
+				<groupId>org.springdoc</groupId>
+				<artifactId>springdoc-openapi</artifactId>
+				<version>${springdoc.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
 	<build>
 		<!-- Turn on filtering by default for application properties and logback properties -->
-		<!-- @project.artifactId@ -->
+		<!-- @project.artifactId@ | @project.version@ -->
 		<resources>
 			<resource>
 				<directory>${basedir}/src/main/resources</directory>
@@ -129,6 +112,14 @@
 		</resources>
 		<plugins>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>11</source>
+					<target>11</target>
+				</configuration>
+			</plugin>
+			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
@@ -138,14 +129,6 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>11</source>
-					<target>11</target>
 				</configuration>
 			</plugin>
 		</plugins>
