@@ -19,6 +19,7 @@
 		<java.version>11</java.version>
 		<spring-cloud.version>2021.0.1</spring-cloud.version>
 		<springfox.version>2.10.5</springfox.version>
+		<swagger-core.version>1.6.4</swagger-core.version>
 	</properties>
 
 	<dependencies>
@@ -33,6 +34,12 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter</artifactId>
+		</dependency>
+		<!--  从 springcloud2020 版本开始 Bootstrap 被默认禁用，即默认 spring.cloud.bootstrap.enabled=false，
+			  这会导致配置文件中以占位符的方式引用另一个配置文件的配置解析失败 -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-bootstrap</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -85,12 +92,12 @@
 		<dependency>
 			<groupId>io.swagger</groupId>
 			<artifactId>swagger-annotations</artifactId>
-			<version>1.5.21</version>
+			<version>${swagger-core.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.swagger</groupId>
 			<artifactId>swagger-models</artifactId>
-			<version>1.5.21</version>
+			<version>${swagger-core.version}</version>
 		</dependency>
 	</dependencies>
 
