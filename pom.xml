@@ -18,6 +18,7 @@
 	<properties>
 		<java.version>11</java.version>
 		<spring-cloud.version>2021.0.1</spring-cloud.version>
+		<springfox.version>2.11.0</springfox.version>
 	</properties>
 
 	<dependencies>
@@ -59,7 +60,7 @@
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>
-			<version>2.10.5</version>
+			<version>${springfox.version}</version>
 			<exclusions>
 				<exclusion>
 					<groupId>io.swagger</groupId>
@@ -74,12 +75,12 @@
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-spring-webmvc</artifactId>
-			<version>2.10.5</version>
+			<version>${springfox.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger-ui</artifactId>
-			<version>2.10.5</version>
+			<version>${springfox.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.swagger</groupId>
