@@ -6,3 +6,7 @@ management:
     web:
       exposure:
         include: "*"
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
