@@ -18,6 +18,8 @@
 	<properties>
 		<java.version>11</java.version>
 		<spring-cloud.version>2020.0.5</spring-cloud.version>
+		<springfox.version>2.10.5</springfox.version>
+		<swagger-core.version>1.6.4</swagger-core.version>
 	</properties>
 
 	<dependencies>
@@ -59,7 +61,7 @@
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>
-			<version>2.10.5</version>
+			<version>${springfox.version}</version>
 			<exclusions>
 				<exclusion>
 					<groupId>io.swagger</groupId>
@@ -74,22 +76,22 @@
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-spring-webmvc</artifactId>
-			<version>2.10.5</version>
+			<version>${springfox.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger-ui</artifactId>
-			<version>2.10.5</version>
+			<version>${springfox.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.swagger</groupId>
 			<artifactId>swagger-annotations</artifactId>
-			<version>1.5.21</version>
+			<version>${swagger-core.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.swagger</groupId>
 			<artifactId>swagger-models</artifactId>
-			<version>1.5.21</version>
+			<version>${swagger-core.version}</version>
 		</dependency>
 	</dependencies>
 
