@@ -1,14 +1,8 @@
 # springboot 集成 swagger (springfox | springdoc)
 # A Springboot App With Swagger Docs Demo
 
-> spring-boot:2.6.6 & springfox swagger:2.11.0
-# Configure
-```
-spring:
-  mvc:
-    pathmatch:
-      matching-strategy: ANT_PATH_MATCHER
-```
+> spring-boot:2.6.6 & springfox swagger:2.12.0
+
 > http://localhost:8080/swagger-ui.html
 
-> see [springfox swagger 2.11.0](https://github.com/uwoerla/springfox/tree/v2.11.0)
+> see [springfox swagger 2.12.0](https://github.com/uwoerla/springfox/tree/v2.12.0)
