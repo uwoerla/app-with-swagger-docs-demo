@@ -2,6 +2,9 @@
 # A Springboot App With Swagger Docs Demo
 
 > spring-boot:2.6.6 & springfox swagger:2.11.0
+>
+> why? at first [see issues](https://github.com/spring-projects/spring-boot/issues/24645)
+
 # Configure
 ```
 spring:
